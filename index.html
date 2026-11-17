@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Đảo Rồng Nhỏ</title>
+  <meta name="theme-color" content="#7fd458">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐉</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three.module.min.js", "three/addons/": "./vendor/addons/" } }
+  </script>
+</head>
+<body>
+  <div id="stage"></div>
+  <div id="labels"></div>
+
+  <div id="hud">
+    <div class="top">
+      <div class="lvl"><div class="badge">⭐<b id="lvl">1</b></div><div class="xp"><div class="bar"><i id="xpbar"></i></div><small id="xpTxt"></small></div></div>
+      <div class="pills">
+        <div class="pill res"><span>🪙</span><b id="gold">0</b></div>
+        <div class="pill res"><span>🍖</span><b id="food">0</b></div>
+        <div class="pill res click" id="gemsPill"><span>💎</span><b id="gems">0</b><em>＋</em></div>
+      </div>
+    </div>
+    <button id="eventBtn" class="event-btn hidden"></button>
+    <div id="questBox" class="quest-box"></div>
+
+    <div id="placeBar" class="place-bar hidden">
+      <span id="placeMsg"></span>
+      <button class="btn red" id="placeCancel">✕</button>
+      <button class="btn green" id="placeOk">✓</button>
+    </div>
+
+    <nav id="dock">
+      <button data-act="open" data-p="shop"><span>🛒</span>Cửa hàng</button>
+      <button data-act="open" data-p="dragons" id="dockDragons"><span>🐉</span>Rồng</button>
+      <button data-act="open" data-p="book"><span>📖</span>Sách</button>
+      <button data-act="open" data-p="quests" id="dockQuests"><span>📜</span>Nhiệm vụ</button>
+      <button data-act="open" data-p="events" id="dockEvents"><span>🎉</span>Sự kiện</button>
+      <button data-act="open" data-p="settings"><span>⚙️</span>Cài đặt</button>
+    </nav>
+  </div>
+
+  <div id="modal" class="hidden">
+    <div class="mcard">
+      <header><h2 id="mTitle"></h2><button class="x" data-act="close" aria-label="Đóng">✕</button></header>
+      <div id="mBody"></div>
+    </div>
+  </div>
+  <div id="battle" class="hidden"></div>
+  <div id="confirm" class="hidden"></div>
+  <div id="toasts"></div>
+  <div id="loading"><div>🐉</div><p>Đang tải đảo rồng…</p></div>
+  <noscript>Trò chơi cần bật JavaScript.</noscript>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

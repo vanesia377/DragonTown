@@ -1,0 +1,11 @@
+{
+  "name": "dragontown",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Đảo Rồng Nhỏ – game nuôi rồng 3D chạy trên trình duyệt",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs 8080"
+  },
+  "license": "MIT"
+}
